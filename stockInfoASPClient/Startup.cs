@@ -44,6 +44,13 @@ namespace stockInfoASPClient
                     Configuration["EmailSender:Password"]
                 )
             );
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+            });
 
         }
 
